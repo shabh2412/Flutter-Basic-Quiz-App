@@ -1,6 +1,9 @@
-# flutter_complete_guide
-
+# flutter_complete_guide Basic Quiz App
 A new Flutter project.
+<ul>
+  <li>This is a basic flutter quiz app that determines your personality based on the options you have chosen.</li>
+  <li>This app is just made for fun</li>
+ </ul>
 
 ## Getting Started
 
