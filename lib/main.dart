@@ -4,11 +4,29 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
+class MyAppState extends State<MyApp> {
   var questionIndex = 0;
+
   void answerQuestion(){
-    print('Answer Chosen!');
-    questionIndex = questionIndex + 1;
+    if(questionIndex<1){
+      setState((){
+        questionIndex = questionIndex + 1;
+      });
+    }
+    else{
+      setState(() {
+        questionIndex = questionIndex -1;
+      });
+    }
+    print(questionIndex);
   }
   @override
   Widget build(BuildContext context) {
@@ -24,7 +42,7 @@ class MyApp extends StatelessWidget {
             body: Column(
               //children: <Widget>[], //<Widget> tells dart that --> [] <-- will contain a list of widgets
               children: [
-                Text(questions[0]),
+                Text(questions[questionIndex]),
                 RaisedButton(
                   child: Text('Answer 1'),
                   onPressed: answerQuestion,
